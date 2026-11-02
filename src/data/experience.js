@@ -1,0 +1,60 @@
+// Source: Kajal_Bharti_Backend_Engineer.pdf (resume). Edit here to update the Work Experience section.
+export const experiences = [
+  {
+    title: 'Senior Backend Engineer',
+    company: 'Hydear Tech Pvt Ltd',
+    location: 'New Delhi',
+    period: 'Jun 2025 – Present',
+    duration: '1 Yr 5 Mos',
+    current: true,
+    points: [
+      'Leading backend engineering for CRM, fintech and inventory management platforms.',
+      'Architecting scalable REST APIs, authentication systems, workflow automation services and real-time operational modules.',
+      'Managing production deployments on AWS (EC2, S3, RDS) with Docker, PM2, NGINX and CI/CD pipelines.',
+      'Implemented Redis caching, queue-based processing and cron automation for scalable applications.',
+    ],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Redis', 'AWS', 'Docker'],
+  },
+  {
+    title: 'Backend Developer (Freelance)',
+    company: 'Independent Contractor',
+    location: 'Remote',
+    period: 'Jan 2025 – Jun 2025',
+    duration: '6 Mos',
+    points: [
+      'Developed scalable backend systems, payment integrations, operational dashboards and REST APIs.',
+    ],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'MySQL'],
+  },
+  {
+    title: 'Software Engineer – Backend',
+    company: 'Actiknow Consulting Pvt Ltd',
+    location: 'New Delhi',
+    period: 'Jan 2023 – Jan 2025',
+    duration: '2 Yrs',
+    points: [
+      'Built backend systems for telemedicine, CRM, affiliate and fintech platforms.',
+      'Delivered healthcare workflows: appointments, video consultations, OHIF MRI/CT viewers and RBAC dashboards.',
+      'Worked on lender integrations, workflow automation, API integrations and migration of legacy PHP modules to MERN.',
+    ],
+    tech: ['Node.js', 'MongoDB', 'MySQL'],
+  },
+  {
+    title: 'Web Developer',
+    company: 'Paridhi Webtech Pvt Ltd',
+    location: 'Gurugram',
+    period: 'Jun 2021 – Jan 2023',
+    duration: '1 Yr 7 Mos',
+    points: ['Developed business applications and backend modules using PHP, Laravel, CodeIgniter and MySQL.'],
+    tech: ['PHP', 'Laravel', 'CodeIgniter', 'MySQL'],
+  },
+  {
+    title: 'Software Developer',
+    company: 'FinHeal Finserve Pvt Ltd',
+    location: 'New Delhi',
+    period: 'Nov 2020 – Jun 2021',
+    duration: '7 Mos',
+    points: ['Built fintech backend modules, secure APIs, lender integrations and authentication workflows.'],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'MySQL'],
+  },
+];
