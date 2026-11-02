@@ -1,23 +1,27 @@
 import React from 'react';
-import { User, Layers, MapPin, Calendar, Server, Network, Cloud, Database } from 'lucide-react';
+import { User, Layers, MapPin, Calendar, Code2, Network, Cloud, Database } from 'lucide-react';
 
 export default function AboutAndWhatIDo({ onCategoryClick }) {
   const whatIDoItems = [
     {
       title: 'Backend Development',
-      icon: <Server className="w-5 h-5 text-[#0066ff]" />,
+      sub: 'Node.js, Express, NestJS',
+      icon: <Code2 className="w-6 h-6 text-[#0066ff]" />,
     },
     {
       title: 'System Design',
-      icon: <Network className="w-5 h-5 text-[#0066ff]" />,
+      sub: 'Scalable & resilient systems',
+      icon: <Network className="w-6 h-6 text-[#0066ff]" />,
     },
     {
       title: 'DevOps & Cloud',
-      icon: <Cloud className="w-5 h-5 text-[#0066ff]" />,
+      sub: 'AWS, Docker, Kubernetes, CI/CD',
+      icon: <Cloud className="w-6 h-6 text-[#0066ff]" />,
     },
     {
       title: 'Database Architecture',
-      icon: <Database className="w-5 h-5 text-[#0066ff]" />,
+      sub: 'PostgreSQL, MongoDB, Redis, MySQL',
+      icon: <Database className="w-6 h-6 text-[#0066ff]" />,
     },
   ];
 
@@ -25,7 +29,16 @@ export default function AboutAndWhatIDo({ onCategoryClick }) {
     <section id="about" className="relative z-30 w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
         {/* About Me Card */}
-        <div className="glass-widget p-6 sm:p-7 flex flex-col justify-between">
+        <div className="glass-widget relative overflow-hidden p-6 sm:p-7 flex flex-col justify-between">
+          <svg viewBox="0 0 200 150" className="!absolute right-2 bottom-2 w-28 sm:w-44 z-0 opacity-90 pointer-events-none" aria-hidden="true">
+            <ellipse cx="100" cy="138" rx="80" ry="8" fill="#93b4f5" opacity=".35" />
+            <path d="M52 40 L132 28 L152 100 L70 116 Z" fill="#4c4fc9" />
+            <path d="M58 46 L127 35 L144 95 L74 108 Z" fill="#2c2f93" />
+            <text x="82" y="82" fontSize="22" fontWeight="700" fill="#8fd3ff" transform="rotate(-9 100 70)">&lt;/&gt;</text>
+            <path d="M70 116 L152 100 L170 112 L84 130 Z" fill="#b9c4ff" />
+            <path d="M28 130 q-8-22 6-30 q4 16-6 30z M30 130 q10-18 24-18 q-6 14-24 18z" fill="#34c99a" />
+            <rect x="22" y="128" width="16" height="10" rx="2" fill="#7c8cf0" />
+          </svg>
           <div>
             <div className="flex items-center gap-3 mb-3.5">
               <div className="w-8 h-8 rounded-xl flex items-center justify-center text-[#0a5cff]">
@@ -80,9 +93,10 @@ export default function AboutAndWhatIDo({ onCategoryClick }) {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
                     {item.icon}
                   </div>
-                  <span className="text-xs sm:text-sm font-bold text-[#0b1a45] leading-snug">
-                    {item.title}
-                  </span>
+                  <div className="min-w-0">
+                    <div className="text-xs sm:text-sm font-bold text-[#0b1a45] leading-snug">{item.title}</div>
+                    <div className="text-[10px] sm:text-xs text-[#26356b]/80 leading-snug mt-0.5">{item.sub}</div>
+                  </div>
                 </div>
               ))}
             </div>

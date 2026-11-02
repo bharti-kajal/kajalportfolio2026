@@ -5,8 +5,7 @@ import StatsBar from './components/StatsBar';
 import AboutAndWhatIDo from './components/AboutAndWhatIDo';
 import TechnicalSkills from './components/TechnicalSkills';
 import ExperienceAndProjects from './components/ExperienceAndProjects';
-import Footer from './components/Footer';
-import ContactCTA from './components/ContactCTA';
+import ExperienceFooter from './components/ExperienceFooter';
 import ContactModal from './components/ContactModal';
 import SkillsModal from './components/SkillsModal';
 import ProjectsPage from './components/ProjectsPage';
@@ -61,28 +60,19 @@ export default function App() {
   };
 
   return (
-    <div className={`page-bg-ref relative min-h-screen text-slate-100 overflow-x-hidden selection:bg-[#00f2fe] selection:text-slate-900 py-3 sm:py-6`}>
-      {/* Soft colour blobs behind the glass (same on every page) */}
+    <div className={`${page === 'projects' ? 'page-bg-dark' : 'page-bg'} relative min-h-screen text-slate-100 overflow-x-hidden selection:bg-[#00f2fe] selection:text-slate-900 py-2 sm:py-3`}>
+      {/* Colour blobs behind the glass so the frosted blur has something to refract */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="orb top-[-6%] right-[2%] w-[620px] h-[620px] bg-gradient-to-br from-[#0a66ff]/50 via-[#00d2ff]/25 to-transparent" />
-        <div className="orb top-[45%] right-[-8%] w-[520px] h-[520px] bg-[#7dd3fc]/35" />
-        <div className="orb top-[60%] left-[-10%] w-[480px] h-[480px] bg-[#9cc4f5]/35" />
+        <div className="orb top-[-6%] right-[2%] w-[620px] h-[620px] bg-gradient-to-br from-[#0a66ff]/70 via-[#00d2ff]/45 to-transparent" />
+        <div className="orb top-[12%] left-[-12%] w-[520px] h-[520px] bg-[#4f46e5]/40" />
+        <div className="orb top-[30%] right-[-8%] w-[560px] h-[560px] bg-[#38bdf8]/55" />
+        <div className="orb top-[48%] left-[-8%] w-[520px] h-[520px] bg-[#8b9bff]/55" />
+        <div className="orb top-[62%] right-[10%] w-[480px] h-[480px] bg-[#7dd3fc]/50" />
+        <div className="orb bottom-[-4%] left-[10%] w-[560px] h-[560px] bg-[#0066ff]/50" />
       </div>
 
-      {(
-        <svg className="absolute bottom-0 right-0 w-[70%] max-w-[900px] h-[220px] pointer-events-none z-0 opacity-80" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"
-          style={{ WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent)', maskImage: 'linear-gradient(to left, #000 40%, transparent)' }}>
-          <defs>
-            <linearGradient id="pw1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#0a66ff" stopOpacity="0.15" /><stop offset="1" stopColor="#0a3fc4" stopOpacity="0.9" /></linearGradient>
-            <linearGradient id="pw2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#38bdf8" stopOpacity="0.1" /><stop offset="1" stopColor="#00d2ff" stopOpacity="0.8" /></linearGradient>
-          </defs>
-          <path d="M0,150 C160,60 380,200 600,60 L600,200 L0,200 Z" fill="url(#pw2)" />
-          <path d="M0,180 C200,110 420,210 600,120 L600,200 L0,200 Z" fill="url(#pw1)" />
-        </svg>
-      )}
-
       {/* Main Full-Width Responsive Container */}
-      <div className="relative z-10 w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-col space-y-6 sm:space-y-8">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col space-y-6 sm:space-y-8">
         {/* Navigation */}
         <Navbar
           activeSection={activeSection}
@@ -126,13 +116,13 @@ export default function App() {
             onViewAllSkills={() => setIsSkillsOpen(true)}
           />
 
-          {/* Closing call-to-action */}
-          <ContactCTA onContactClick={() => setIsContactOpen(true)} />
-
+          {/* Experience Footer & Bottom Waves */}
+          <ExperienceFooter
+            onContactClick={() => setIsContactOpen(true)}
+            onDownloadResume={handleDownloadResume}
+          />
           </>
         )}
-
-        <Footer onGoHome={goHome} onGoProjects={goProjects} onContactClick={() => setIsContactOpen(true)} />
       </div>
 
       {/* Interactive Modals */}

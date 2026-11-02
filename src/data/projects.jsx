@@ -15,9 +15,9 @@ export const allProjects = [
     iconBg: 'bg-[#8b5cf6]',
     filter: 'CRM',
     category: 'CRM & AI Telecalling Platform',
-    tech: ['Node.js', 'MySQL', 'Redis'],
+    tech: ['Node.js', 'PostgreSQL', 'Redis'],
     summary: 'High-performance real-time tele-calling & automated dialing platform handling 50k+ daily concurrent calls with zero packet loss.',
-    thumb: { sidebar: '#1c1b63', accent: '#8b5cf6', variant: 'line' },
+    thumb: { accent: '#8b5cf6', variant: 'line' },
   },
   {
     id: 'upniva',
@@ -28,9 +28,9 @@ export const allProjects = [
     iconBg: 'bg-[#0284c7]',
     filter: 'FinTech',
     category: 'Lead Orchestration Platform',
-    tech: ['Node.js', 'MongoDB', 'Redis'],
+    tech: ['Node.js', 'MongoDB', 'React'],
     summary: 'Next-gen fintech backend processing KYC, credit line assessment, and instant loan disbursements with bank-grade security protocols.',
-    thumb: { sidebar: '#0c4b3e', accent: '#10b981', variant: 'bars' },
+    thumb: { accent: '#10b981', variant: 'bars' },
   },
   {
     id: 'complianceseva',
@@ -43,7 +43,7 @@ export const allProjects = [
     category: 'Corporate Compliance & Legal Operations System',
     tech: ['Node.js', 'PostgreSQL', 'RBAC'],
     summary: 'Automated compliance tracking, GST filings, and document verification platform serving enterprise businesses across India.',
-    thumb: { sidebar: '#0a4a45', accent: '#14b8a6', variant: 'table' },
+    thumb: { accent: '#14b8a6', variant: 'table' },
   },
   {
     id: 'interactify',
@@ -56,7 +56,7 @@ export const allProjects = [
     category: 'Customer Engagement Platform',
     tech: ['Node.js', 'MySQL', 'Redis'],
     summary: 'Customer engagement platform for managing conversations, follow-ups and campaigns across channels from a single backend.',
-    thumb: { sidebar: '#171d63', accent: '#4f46e5', variant: 'table' },
+    thumb: { accent: '#38bdf8', variant: 'line' },
   },
   {
     id: 'unirr',
@@ -69,7 +69,7 @@ export const allProjects = [
     category: 'University & Institute Management',
     tech: ['Node.js', 'MySQL', 'React'],
     summary: 'Multi-institute management SaaS covering admissions, students, courses and administration workflows.',
-    thumb: { sidebar: '#13287c', accent: '#3b82f6', variant: 'table' },
+    thumb: { accent: '#60a5fa', variant: 'table' },
   },
   {
     id: 'referloan',
@@ -82,6 +82,6 @@ export const allProjects = [
     category: 'Referral-based Loan Platform',
     tech: ['Node.js', 'MySQL', 'AWS'],
     summary: 'Referral-driven loan platform connecting referrers, applicants and lenders with tracked lead status and payouts.',
-    thumb: { sidebar: '#0a1020', accent: '#2563eb', variant: 'line' },
+    thumb: { accent: '#f59e0b', variant: 'bars' },
   },
 ];

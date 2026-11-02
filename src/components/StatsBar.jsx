@@ -6,7 +6,7 @@ export default function StatsBar() {
     {
       icon: <Code2 className="w-7 h-7 text-white" />,
       value: "50+",
-      label: "Projects",
+      label: "Projects Delivered",
     },
     {
       icon: <Users className="w-7 h-7 text-white" />,

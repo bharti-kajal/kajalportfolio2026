@@ -5,14 +5,6 @@ import { allProjects, projectCategories } from '../data/projects.jsx';
 
 const PAGE_SIZE = 6;
 
-// 1 2 3 4 5 … N style page list
-function pageList(page, total) {
-  if (total <= 6) return Array.from({ length: total }, (_, i) => i + 1);
-  const head = page <= 4 ? [1, 2, 3, 4, 5] : [1, '…', page - 1, page, page + 1];
-  const tail = page <= 4 || page >= total - 2 ? ['…', total] : ['…', total];
-  return [...head, ...tail];
-}
-
 export default function ProjectsPage({ onProjectClick, onExploreCaseStudies }) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
@@ -116,42 +108,40 @@ export default function ProjectsPage({ onProjectClick, onExploreCaseStudies }) {
             <article
               key={proj.id}
               onClick={() => onProjectClick(proj)}
-              className="glass-widget group cursor-pointer !rounded-[1.4rem] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[0_22px_44px_-12px_rgba(10,60,200,0.55)] transition-all duration-200"
+              className="glass-dark-card group cursor-pointer rounded-3xl p-3 flex flex-col gap-3 hover:-translate-y-1 hover:border-sky-300/70 hover:shadow-[0_18px_40px_-12px_rgba(56,189,248,0.45)] transition-all duration-200"
             >
-              <div className="aspect-[16/9] overflow-hidden bg-[#0a1740]">
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 bg-[#0a1740]">
                 <div className="w-full h-full transition-transform duration-500 group-hover:scale-105">
-                  <ProjectThumb {...proj.thumb} />
+                  <ProjectThumb accent={proj.thumb.accent} variant={proj.thumb.variant} />
                 </div>
               </div>
 
-              <div className="p-3 sm:p-4 flex flex-col gap-2.5 flex-1">
-                <div className="flex items-start gap-2.5">
-                  <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl ${proj.iconBg} flex items-center justify-center flex-shrink-0 shadow-md`}>
-                    {proj.icon}
-                  </div>
-                  <div className="min-w-0 pt-0.5">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <h3 className="text-[13px] sm:text-base font-bold text-[#0b1a45] leading-tight break-words">{proj.title}</h3>
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-200/90 text-emerald-800">
-                        {proj.tag}
-                      </span>
-                    </div>
-                  </div>
+              <div className="px-1 flex items-start gap-2.5">
+                <div className={`w-8 h-8 rounded-lg ${proj.iconBg} flex items-center justify-center flex-shrink-0 shadow-md`}>
+                  {proj.icon}
                 </div>
-                <p className="text-[11px] sm:text-xs text-[#26356b] leading-snug">{proj.category}</p>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-sm sm:text-base font-bold text-white leading-tight break-words">{proj.title}</h3>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-400/90 text-emerald-950">
+                      {proj.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-200/90 leading-snug mt-0.5">{proj.category}</p>
+                </div>
+              </div>
 
-                <div className="mt-auto pt-1 flex items-center justify-between gap-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {proj.tech.map((t) => (
-                      <span key={t} className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold text-[#0b1a45] bg-white/90 border border-white shadow-sm">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="w-8 h-8 rounded-full bg-gradient-to-b from-[#1f5fe0] to-[#0a2f9e] flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(10,47,158,0.5)] group-hover:translate-x-0.5 transition-transform">
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </span>
+              <div className="px-1 mt-auto flex items-center justify-between gap-2">
+                <div className="flex flex-wrap gap-1.5">
+                  {proj.tech.map((t) => (
+                    <span key={t} className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold text-white bg-white/12 border border-white/25">
+                      {t}
+                    </span>
+                  ))}
                 </div>
+                <span className="w-8 h-8 rounded-full bg-gradient-to-b from-[#2f8bff] to-[#0052e6] flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(0,82,230,0.6)] group-hover:translate-x-0.5 transition-transform">
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </span>
               </div>
             </article>
           ))}
@@ -159,40 +149,36 @@ export default function ProjectsPage({ onProjectClick, onExploreCaseStudies }) {
       )}
 
       {/* Pagination */}
-      <nav className="glass-widget self-center !rounded-full px-3 py-2 flex items-center gap-1 text-sm font-bold text-[#0b1a45]" aria-label="Pagination">
+      <nav className="glass-dark-card self-center rounded-full px-3 py-2 flex items-center gap-1.5 text-sm font-semibold text-white" aria-label="Pagination">
         <button
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
-          className="flex items-center gap-1 px-3 py-1.5 rounded-full text-[#0a3fc4] disabled:opacity-40 hover:bg-white/60"
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full disabled:opacity-40 hover:bg-white/10"
         >
           <ChevronLeft className="w-4 h-4" /> Prev
         </button>
-        {pageList(page, totalPages).map((n, i) =>
-          n === '…' ? (
-            <span key={`e${i}`} className="px-1.5 text-slate-500">…</span>
-          ) : (
-            <button
-              key={n}
-              onClick={() => setPage(n)}
-              className={`w-8 h-8 rounded-lg ${
-                n === page ? 'bg-gradient-to-b from-[#1f5fe0] to-[#0a2f9e] text-white shadow-[0_4px_12px_rgba(10,47,158,0.5)]' : 'hover:bg-white/60'
-              }`}
-            >
-              {n}
-            </button>
-          )
-        )}
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+          <button
+            key={n}
+            onClick={() => setPage(n)}
+            className={`w-8 h-8 rounded-full ${
+              n === page ? 'bg-gradient-to-b from-[#2f8bff] to-[#0052e6] shadow-[0_4px_12px_rgba(0,82,230,0.6)]' : 'hover:bg-white/10'
+            }`}
+          >
+            {n}
+          </button>
+        ))}
         <button
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={page === totalPages}
-          className="flex items-center gap-1 px-3 py-1.5 rounded-full text-[#0a3fc4] disabled:opacity-40 hover:bg-white/60"
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full disabled:opacity-40 hover:bg-white/10"
         >
           Next <ChevronRight className="w-4 h-4" />
         </button>
       </nav>
 
       {/* CTA */}
-      <section className="rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row bg-gradient-to-br from-[#16399a] via-[#1a46b8] to-[#0f2c7a] border border-white/50 shadow-[0_20px_50px_-14px_rgba(5,20,90,0.7),0_1px_0_rgba(255,255,255,0.5)_inset] items-center gap-6 overflow-hidden relative">
+      <section className="glass-dark-card rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-center gap-6 overflow-hidden relative">
         <div className="w-full md:w-60 flex-shrink-0">
           <svg viewBox="0 0 240 150" className="w-full drop-shadow-[0_0_30px_rgba(56,189,248,0.6)]" aria-hidden="true">
             <defs>
@@ -215,7 +201,7 @@ export default function ProjectsPage({ onProjectClick, onExploreCaseStudies }) {
           </p>
           <button
             onClick={onExploreCaseStudies}
-            className="mt-4 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-b from-white to-[#cfe3ff] text-[#0a3fc4] text-sm font-bold border border-white shadow-[0_6px_24px_rgba(125,211,252,0.6)] hover:scale-[1.03] active:scale-[0.98] transition-all"
+            className="mt-4 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-b from-[#2f8bff] to-[#0052e6] text-white text-sm font-semibold border border-white/30 shadow-[0_6px_24px_rgba(0,102,255,0.55)] hover:scale-[1.03] active:scale-[0.98] transition-all"
           >
             Explore Case Studies <ArrowRight className="w-4 h-4" />
           </button>
