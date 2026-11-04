@@ -54,11 +54,11 @@ export default function TechnicalSkills({ onViewAllSkills }) {
 
   return (
     <section id="skills" className="relative z-30 w-full">
-      <div className="glass-widget p-6 sm:p-7">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 mb-5">
+      <div className="glass-widget p-4 sm:p-5">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-[#0a5cff]"><Layers className="w-5 h-5" /></div>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#0b1a45] tracking-tight">Technical Skills</h2>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-[#c9962b]"><Layers className="w-5 h-5" /></div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#14261e] tracking-tight">Technical Skills</h2>
           </div>
 
           <div className="flex items-center gap-4 min-w-0">
@@ -69,15 +69,15 @@ export default function TechnicalSkills({ onViewAllSkills }) {
                   onClick={() => setActiveTab(tab)}
                   className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
                     activeTab === tab
-                      ? 'bg-gradient-to-b from-[#2f8bff] to-[#0052e6] text-white shadow-[0_4px_12px_rgba(0,82,230,0.4)]'
-                      : 'text-[#26356b] hover:text-[#0b1a45] bg-white/55 hover:bg-white/90 border border-white/80'
+                      ? 'bg-gradient-to-b from-[#1b7a5a] to-[#0b4634] text-white shadow-[0_4px_12px_rgba(15,90,67,0.4)]'
+                      : 'text-[#2f4a3d] hover:text-[#14261e] bg-white/55 hover:bg-white/90 border border-white/80'
                   }`}
                 >
                   {tab}
                 </button>
               ))}
             </div>
-            <button onClick={onViewAllSkills} className="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0066ff] hover:text-blue-700 transition-colors flex-shrink-0 group">
+            <button onClick={onViewAllSkills} className="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0f5a43] hover:text-blue-700 transition-colors flex-shrink-0 group">
               <span>View All Skills</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </button>
@@ -87,13 +87,13 @@ export default function TechnicalSkills({ onViewAllSkills }) {
         <div className={`grid gap-3 sm:gap-4 ${single ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'}`}>
           {visible.map(({ title, Icon, items }) => (
             <div key={title} className="glass-item rounded-2xl p-4">
-              <div className="flex items-center gap-2 pb-2.5 mb-2.5 border-b border-[#9db3ea]/40">
-                <Icon className="w-4 h-4 text-[#0a5cff]" />
-                <h3 className="text-sm font-bold text-[#0b1a45]">{title}</h3>
+              <div className="flex items-center gap-2 pb-2.5 mb-2.5 border-b border-[#dccfb2]/40">
+                <Icon className="w-4 h-4 text-[#c9962b]" />
+                <h3 className="text-sm font-bold text-[#14261e]">{title}</h3>
               </div>
               <ul className={single ? 'grid grid-cols-2 sm:grid-cols-4 gap-2.5' : 'space-y-2.5'}>
                 {items.map(([name, I]) => (
-                  <li key={name} className="flex items-center gap-3 text-xs sm:text-sm font-semibold text-[#0b1a45]">
+                  <li key={name} className="flex items-center gap-3 text-xs sm:text-sm font-semibold text-[#14261e]">
                     <I /> {name}
                   </li>
                 ))}

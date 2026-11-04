@@ -17,7 +17,7 @@ export default function ContactModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#eadfc6]/55 backdrop-blur-xl animate-fadeIn">
       <div
         className="relative w-full max-w-lg rounded-3xl bg-white/90 backdrop-blur-2xl border border-white/80 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,10,40,0.35)] text-slate-900"
         onClick={(e) => e.stopPropagation()}
@@ -31,7 +31,7 @@ export default function ContactModal({ isOpen, onClose }) {
         </button>
 
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00c6ff] flex items-center justify-center text-white shadow-md">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0f5a43] to-[#c9962b] flex items-center justify-center text-white shadow-md">
             <Mail className="w-5 h-5" />
           </div>
           <div>
@@ -46,7 +46,7 @@ export default function ContactModal({ isOpen, onClose }) {
             href="mailto:kajal.cloudops@gmail.com"
             className="flex items-center gap-2.5 p-3 rounded-xl bg-blue-50/70 border border-blue-100 hover:bg-blue-100/70 transition-colors"
           >
-            <Mail className="w-4 h-4 text-[#0066ff]" />
+            <Mail className="w-4 h-4 text-[#0f5a43]" />
             <span className="text-xs font-semibold text-slate-800 truncate">kajal.cloudops@gmail.com</span>
           </a>
 
@@ -76,7 +76,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. Alex Johnson"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff] shadow-sm"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f5a43] shadow-sm"
               />
             </div>
 
@@ -88,7 +88,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="alex@company.com"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff] shadow-sm"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f5a43] shadow-sm"
               />
             </div>
 
@@ -100,13 +100,13 @@ export default function ContactModal({ isOpen, onClose }) {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Tell me about your project, engineering role, or idea..."
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff] shadow-sm resize-none"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f5a43] shadow-sm resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0066ff] to-[#00aaff] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0f5a43] to-[#1b7a5a] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
             >
               <Send className="w-4 h-4" />
               <span>Send Message</span>

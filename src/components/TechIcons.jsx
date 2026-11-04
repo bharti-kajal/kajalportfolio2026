@@ -115,8 +115,8 @@ export const PHPIcon = () => (
 
 export const ReactIcon = () => (
   <svg className="w-6 h-6 flex-shrink-0 animate-[spin_8s_linear_infinite]" viewBox="-11.5 -10.23174 23 20.46348">
-    <circle cx="0" cy="0" r="2.05" fill="#00d8ff"/>
-    <g stroke="#00d8ff" strokeWidth="1.2" fill="none">
+    <circle cx="0" cy="0" r="2.05" fill="#c9962b"/>
+    <g stroke="#c9962b" strokeWidth="1.2" fill="none">
       <ellipse rx="11" ry="4.2"/>
       <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
       <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
@@ -194,8 +194,8 @@ export const DockerIcon = () => (
 
 export const KubernetesIcon = () => (
   <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="9" stroke="#326CE5" strokeWidth="2" />
-    <path d="M12 6v12M6 12h12M7.5 7.5l9 9M7.5 16.5l9-9" stroke="#326CE5" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="12" cy="12" r="9" stroke="#1b7a5a" strokeWidth="2" />
+    <path d="M12 6v12M6 12h12M7.5 7.5l9 9M7.5 16.5l9-9" stroke="#1b7a5a" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 

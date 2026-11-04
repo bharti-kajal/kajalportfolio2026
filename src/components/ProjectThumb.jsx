@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Stylised dashboard preview used as the project card image.
-export default function ProjectThumb({ accent = '#38bdf8', variant = 'line' }) {
+export default function ProjectThumb({ accent = '#c9962b', variant = 'line' }) {
   const gid = `g-${accent.replace('#', '')}-${variant}`;
   return (
     <svg viewBox="0 0 200 112" className="w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">

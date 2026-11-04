@@ -5,7 +5,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
   if (!isOpen || !project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#020a24]/75 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#eadfc6]/55 backdrop-blur-xl animate-fadeIn">
       <div
         className="relative w-full max-w-xl rounded-3xl bg-gradient-to-br from-[#14307f]/90 to-[#071a4d]/95 backdrop-blur-2xl border border-white/30 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,10,40,0.6)] text-white max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -48,7 +48,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
               <span>Optimized throughput with Redis in-memory caching and connection pooling, reducing p99 latency to &lt;45ms.</span>
             </div>
             <div className="p-3 rounded-xl bg-white/10 border border-white/20 flex items-start gap-2.5">
-              <Server className="w-4 h-4 text-[#0066ff] flex-shrink-0 mt-0.5" />
+              <Server className="w-4 h-4 text-[#0f5a43] flex-shrink-0 mt-0.5" />
               <span>Modular microservice architecture orchestrated with Docker containers and automated CI/CD deployments.</span>
             </div>
             <div className="p-3 rounded-xl bg-white/10 border border-white/20 flex items-start gap-2.5">
@@ -76,7 +76,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         {/* Action Button */}
         <button
           onClick={onClose}
-          className="w-full py-3 rounded-xl bg-gradient-to-b from-[#2f8bff] to-[#0052e6] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+          className="w-full py-3 rounded-xl bg-gradient-to-b from-[#1b7a5a] to-[#0b4634] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
         >
           Close Preview
         </button>

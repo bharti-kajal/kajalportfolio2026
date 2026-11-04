@@ -7,7 +7,7 @@ export default function SkillsModal({ isOpen, onClose }) {
   const categories = [
     {
       title: 'Backend & Runtimes',
-      icon: <Server className="w-4 h-4 text-[#0066ff]" />,
+      icon: <Server className="w-4 h-4 text-[#0f5a43]" />,
       skills: ['Node.js', 'Express.js', 'TypeScript', 'JavaScript (ES6+)', 'Python', 'FastAPI', 'PHP'],
     },
     {
@@ -28,7 +28,7 @@ export default function SkillsModal({ isOpen, onClose }) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#eadfc6]/55 backdrop-blur-xl animate-fadeIn">
       <div
         className="relative w-full max-w-2xl rounded-3xl bg-white/95 backdrop-blur-2xl border border-white p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,10,40,0.35)] text-slate-900 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -66,7 +66,7 @@ export default function SkillsModal({ isOpen, onClose }) {
 
         <button
           onClick={onClose}
-          className="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-[#0066ff] to-[#00aaff] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+          className="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-[#0f5a43] to-[#1b7a5a] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
         >
           Close
         </button>

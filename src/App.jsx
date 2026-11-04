@@ -62,19 +62,19 @@ export default function App() {
   };
 
   return (
-    <div className={`${page === 'projects' ? 'page-bg-dark' : 'page-bg'} relative min-h-screen text-slate-100 overflow-x-hidden selection:bg-[#00f2fe] selection:text-slate-900 py-2 sm:py-3`}>
+    <div className={`${'page-bg-royal'} relative min-h-screen text-[#14261e] overflow-x-hidden font-sans selection:bg-[#0f5a43] selection:text-white py-1 sm:py-2`}>
       {/* Colour blobs behind the glass so the frosted blur has something to refract */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="orb top-[-6%] right-[2%] w-[620px] h-[620px] bg-gradient-to-br from-[#0a66ff]/70 via-[#00d2ff]/45 to-transparent" />
-        <div className="orb top-[12%] left-[-12%] w-[520px] h-[520px] bg-[#4f46e5]/40" />
-        <div className="orb top-[30%] right-[-8%] w-[560px] h-[560px] bg-[#38bdf8]/55" />
-        <div className="orb top-[48%] left-[-8%] w-[520px] h-[520px] bg-[#8b9bff]/55" />
-        <div className="orb top-[62%] right-[10%] w-[480px] h-[480px] bg-[#7dd3fc]/50" />
-        <div className="orb bottom-[-4%] left-[10%] w-[560px] h-[560px] bg-[#0066ff]/50" />
+        
+        
+        
+        
+        
+        
       </div>
 
       {/* Main Full-Width Responsive Container */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col space-y-6 sm:space-y-8">
+      <div className={`relative z-10 w-full ${page === 'home' ? 'max-w-[1440px]' : 'max-w-[1360px]'} mx-auto px-4 sm:px-6 lg:px-8 flex flex-col space-y-4 sm:space-y-5`}>
         {/* Navigation */}
         <Navbar
           activeSection={activeSection}
@@ -128,6 +128,7 @@ export default function App() {
           <ExperienceFooter
             onContactClick={() => setIsContactOpen(true)}
             onDownloadResume={handleDownloadResume}
+            onCaseStudyClick={() => setIsSwiftDialCaseStudyOpen(true)}
           />
           </>
         )}
