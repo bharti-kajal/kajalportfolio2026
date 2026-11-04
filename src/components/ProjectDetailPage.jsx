@@ -92,7 +92,7 @@ function ArchDiagram({ a }) {
   );
 }
 
-export default function ProjectDetailPage({ projectId }) {
+export default function ProjectDetailPage({ projectId, onOpenCaseStudy }) {
   const [tab, setTab] = useState('Overview');
   const project = allProjects.find((p) => p.id === projectId);
   const d = projectDetails[projectId];
@@ -105,6 +105,11 @@ export default function ProjectDetailPage({ projectId }) {
       </div>
     );
   }
+
+  const isSwiftDial = project.id === 'swiftdial';
+  const projectTabs = isSwiftDial
+    ? ['Overview', '10-Stage Scaling Roadmap', 'Architecture', 'Database Design', 'My Contributions', 'Challenges']
+    : tabs;
 
   const accent = project.thumb?.accent || '#38bdf8';
 
@@ -166,6 +171,51 @@ export default function ProjectDetailPage({ projectId }) {
 
   const content = {
     Overview: <Overview />,
+    '10-Stage Scaling Roadmap': (
+      <Card icon={Cpu} title="SwiftDial 10-Stage Scaling Roadmap (10 to 1 Crore Users/Day)">
+        <div className="space-y-4">
+          <div className="p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span className="text-xs font-bold text-[#0a5cff] uppercase">Senior Backend Architecture</span>
+              <h4 className="text-sm sm:text-base font-extrabold text-[#0b1a45]">From 10 Users/Day to 1 Crore (10M) Users/Day</h4>
+              <p className="text-xs text-[#26356b]">What breaks, why it breaks, and the 5 diagnostic questions asked at every scaling step.</p>
+            </div>
+            {onOpenCaseStudy && (
+              <button
+                onClick={onOpenCaseStudy}
+                className="px-4 py-2 rounded-xl bg-[#0066ff] hover:bg-[#0052e6] text-white text-xs font-bold shadow-md flex items-center gap-1.5 self-start sm:self-auto flex-shrink-0"
+              >
+                <span>Open Full Master Case Study</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs border-collapse min-w-[500px]">
+              <thead>
+                <tr className="border-b border-slate-200 text-[#0a5cff]">
+                  <th className="p-2 font-bold">Stage</th>
+                  <th className="p-2 font-bold">Traffic</th>
+                  <th className="p-2 font-bold">Core Bottleneck</th>
+                  <th className="p-2 font-bold">Engineering Fix</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-[#26356b]">
+                {d.scalingRoadmap && d.scalingRoadmap.map((row) => (
+                  <tr key={row.stage} className="hover:bg-blue-50/50">
+                    <td className="p-2 font-bold text-[#0b1a45]">Stage {row.stage}</td>
+                    <td className="p-2 font-semibold text-emerald-700">{row.traffic}</td>
+                    <td className="p-2 font-medium">{row.bottleneck}</td>
+                    <td className="p-2 font-mono text-[11px] text-[#0a5cff]">{row.fix}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Card>
+    ),
     Architecture: (
       <Card icon={Layers} title="System Architecture">
         <ArchDiagram a={d.architecture} />
@@ -231,6 +281,15 @@ export default function ProjectDetailPage({ projectId }) {
           </div>
           <DashboardMock mock={d.mock} accent={accent} />
           <div className="flex flex-wrap gap-2.5">
+            {isSwiftDial && onOpenCaseStudy && (
+              <button
+                onClick={onOpenCaseStudy}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0066ff] to-[#00d2ff] text-white text-sm font-bold shadow-[0_4px_18px_rgba(0,102,255,0.6)] hover:scale-[1.03] transition-transform border border-white/30"
+              >
+                <span>⚡ 10-Stage Scaling Case Study</span>
+                <ExternalLink className="w-4 h-4" />
+              </button>
+            )}
             <a href={d.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 text-[#0a4fd6] text-sm font-semibold hover:scale-[1.03] transition-transform">
               Visit Live Site <ExternalLink className="w-4 h-4" />
             </a>
@@ -257,7 +316,7 @@ export default function ProjectDetailPage({ projectId }) {
 
       {/* Tabs */}
       <div className="glass-dark-card rounded-full p-1.5 flex gap-1 overflow-x-auto no-scrollbar" role="tablist">
-        {tabs.map((t) => (
+        {projectTabs.map((t) => (
           <button
             key={t}
             role="tab"

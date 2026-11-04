@@ -14,9 +14,9 @@ export const allProjects = [
     icon: <PhoneCall className="w-4 h-4 text-white" />,
     iconBg: 'bg-[#8b5cf6]',
     filter: 'CRM',
-    category: 'CRM & AI Telecalling Platform',
-    tech: ['Node.js', 'PostgreSQL', 'Redis'],
-    summary: 'High-performance real-time tele-calling & automated dialing platform handling 50k+ daily concurrent calls with zero packet loss.',
+    category: 'Voice Automation & CRM Platform (10 -> 1Cr Scale)',
+    tech: ['Node.js', 'MySQL', 'Redis', 'Kafka', 'Docker'],
+    summary: 'High-throughput voice automation & CRM platform engineered to scale from 10 users to 1 crore (10M) users/day with sub-45ms p99 latency.',
     thumb: { accent: '#8b5cf6', variant: 'line' },
   },
   {

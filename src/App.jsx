@@ -10,11 +10,13 @@ import ContactModal from './components/ContactModal';
 import SkillsModal from './components/SkillsModal';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
+import SwiftDialCaseStudyModal from './components/SwiftDialCaseStudyModal';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('Home');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
+  const [isSwiftDialCaseStudyOpen, setIsSwiftDialCaseStudyOpen] = useState(false);
 
   // Tiny hash router: '#/projects' shows the All Projects page, anything else is Home
   const getPage = () => {
@@ -78,16 +80,21 @@ export default function App() {
           activeSection={activeSection}
           setActiveSection={setActiveSection}
           onContactClick={() => setIsContactOpen(true)}
+          onCaseStudyClick={() => setIsSwiftDialCaseStudyOpen(true)}
           onGoProjects={goProjects}
           onGoHome={goHome}
         />
 
         {page === 'project' ? (
-          <ProjectDetailPage key={projectId} projectId={projectId} />
+          <ProjectDetailPage
+            key={projectId}
+            projectId={projectId}
+            onOpenCaseStudy={() => setIsSwiftDialCaseStudyOpen(true)}
+          />
         ) : page === 'projects' ? (
           <ProjectsPage
             onProjectClick={goProject}
-            onExploreCaseStudies={() => setIsContactOpen(true)}
+            onExploreCaseStudies={() => setIsSwiftDialCaseStudyOpen(true)}
           />
         ) : (
           <>
@@ -109,6 +116,7 @@ export default function App() {
           <ExperienceAndProjects
             onProjectClick={goProject}
             onViewAllProjects={handleViewProjects}
+            onCaseStudyClick={() => setIsSwiftDialCaseStudyOpen(true)}
           />
 
           {/* Technical Skills (Exact 4x4 Grid with Category Filter Tabs) */}
@@ -134,6 +142,11 @@ export default function App() {
       <SkillsModal
         isOpen={isSkillsOpen}
         onClose={() => setIsSkillsOpen(false)}
+      />
+
+      <SwiftDialCaseStudyModal
+        isOpen={isSwiftDialCaseStudyOpen}
+        onClose={() => setIsSwiftDialCaseStudyOpen(false)}
       />
     </div>
   );

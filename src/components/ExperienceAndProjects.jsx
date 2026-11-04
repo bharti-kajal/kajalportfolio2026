@@ -27,7 +27,7 @@ function LaptopThumb({ accent = '#38bdf8' }) {
   );
 }
 
-export default function ExperienceAndProjects({ onProjectClick, onViewAllProjects }) {
+export default function ExperienceAndProjects({ onProjectClick, onViewAllProjects, onCaseStudyClick }) {
   const projects = featuredIds.map((id) => allProjects.find((p) => p.id === id)).filter(Boolean);
 
   return (
@@ -77,9 +77,14 @@ export default function ExperienceAndProjects({ onProjectClick, onViewAllProject
                     {proj.icon}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-sm sm:text-base font-bold text-[#0b1a45] truncate">{proj.title}</span>
                       <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-100 text-emerald-700">{proj.tag}</span>
+                      {proj.id === 'swiftdial' && (
+                        <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold bg-blue-100 text-[#0066ff] border border-blue-200">
+                          10-Stage Case Study
+                        </span>
+                      )}
                     </div>
                     <p className="text-[11px] sm:text-xs text-[#26356b]/80 leading-snug mt-0.5">{projectDetails[proj.id]?.subtitle}</p>
                   </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Menu, X } from 'lucide-react';
 
-export default function Navbar({ onContactClick, activeSection = 'Home', setActiveSection, onGoProjects, onGoHome }) {
+export default function Navbar({ onContactClick, onCaseStudyClick, activeSection = 'Home', setActiveSection, onGoProjects, onGoHome }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -16,6 +16,9 @@ export default function Navbar({ onContactClick, activeSection = 'Home', setActi
   const handleNavClick = (item) => {
     setActiveSection(item.name);
     setMobileMenuOpen(false);
+    if (item.name === 'Case Studies') {
+      if (onCaseStudyClick) return onCaseStudyClick();
+    }
     if (item.name === 'Projects') return onGoProjects && onGoProjects();
     if (item.name === 'Home') return onGoHome && onGoHome();
     onGoHome && onGoHome(item.href);
