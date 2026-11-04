@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Layers, MapPin, Calendar, Code2, Network, Cloud, Database } from 'lucide-react';
+import { User, Layers, MapPin, Calendar, Code2, Network, Cloud, Database, Mail, Linkedin, Github } from 'lucide-react';
 
 export default function AboutAndWhatIDo({ onCategoryClick }) {
   const whatIDoItems = [
@@ -54,21 +54,54 @@ export default function AboutAndWhatIDo({ onCategoryClick }) {
 
           <div className="space-y-2.5 pt-3 border-t border-[#e6dac0]">
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#2f4a3d] font-medium">
-              <MapPin className="w-4 h-4 text-slate-500" />
+              <MapPin className="w-4 h-4 text-slate-500 flex-shrink-0" />
               <span>New Delhi, India</span>
             </div>
 
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#2f4a3d] font-medium">
-              <Calendar className="w-4 h-4 text-slate-500" />
+              <Calendar className="w-4 h-4 text-slate-500 flex-shrink-0" />
               <span>5+ Years of Experience</span>
             </div>
 
             <div className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#14261e]">
-              <span className="relative flex h-2.5 w-2.5">
+              <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span>Open for Full-time & Freelance</span>
+            </div>
+
+            <div className="pt-2 border-t border-[#e6dac0]/60 flex flex-wrap items-center gap-2">
+              <a
+                href="mailto:kajal.cloudops@gmail.com"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/80 hover:bg-[#0f5a43] hover:text-white border border-[#e6dac0] text-xs font-semibold text-[#14261e] transition-colors"
+                title="Email Kajal"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#0f5a43]" />
+                <span>kajal.cloudops@gmail.com</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/kajal-bharti-26a968213/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/80 hover:bg-[#0a66c2] hover:text-white border border-[#e6dac0] text-xs font-semibold text-[#14261e] transition-colors"
+                title="LinkedIn Profile"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" />
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href="https://github.com/bharti-kajal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/80 hover:bg-[#24292f] hover:text-white border border-[#e6dac0] text-xs font-semibold text-[#14261e] transition-colors"
+                title="GitHub Profile"
+              >
+                <Github className="w-3.5 h-3.5 text-[#24292f]" />
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
         </div>

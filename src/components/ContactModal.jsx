@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Mail, Phone, MapPin, Send, CheckCircle2, Linkedin, Github } from 'lucide-react';
+import { X, Mail, MapPin, Send, CheckCircle2, Linkedin, Github } from 'lucide-react';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
@@ -41,19 +41,39 @@ export default function ContactModal({ isOpen, onClose }) {
         </div>
 
         {/* Contact Info Pills */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-4">
           <a
             href="mailto:kajal.cloudops@gmail.com"
-            className="flex items-center gap-2.5 p-3 rounded-xl bg-blue-50/70 border border-blue-100 hover:bg-blue-100/70 transition-colors"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-blue-50/70 border border-blue-100 hover:bg-blue-100/70 transition-colors"
           >
-            <Mail className="w-4 h-4 text-[#0f5a43]" />
+            <Mail className="w-4 h-4 text-[#0f5a43] flex-shrink-0" />
             <span className="text-xs font-semibold text-slate-800 truncate">kajal.cloudops@gmail.com</span>
           </a>
 
-          <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
-            <MapPin className="w-4 h-4 text-emerald-600" />
+          <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
+            <MapPin className="w-4 h-4 text-emerald-600 flex-shrink-0" />
             <span className="text-xs font-semibold text-slate-800">New Delhi, India</span>
           </div>
+
+          <a
+            href="https://www.linkedin.com/in/kajal-bharti-26a968213/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-slate-100 transition-colors"
+          >
+            <Linkedin className="w-4 h-4 text-[#0a66c2] flex-shrink-0" />
+            <span className="text-xs font-semibold text-slate-800">LinkedIn Profile</span>
+          </a>
+
+          <a
+            href="https://github.com/bharti-kajal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-slate-100 transition-colors"
+          >
+            <Github className="w-4 h-4 text-[#24292f] flex-shrink-0" />
+            <span className="text-xs font-semibold text-slate-800">GitHub Profile</span>
+          </a>
         </div>
 
         {submitted ? (

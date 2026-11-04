@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Linkedin, Github, Mail } from 'lucide-react';
 
 export default function Hero({ onViewProjects, onDownloadResume }) {
   return (
@@ -35,6 +35,40 @@ export default function Hero({ onViewProjects, onDownloadResume }) {
             >
               <Download className="w-4 h-4" />
               <span>Download Resume</span>
+            </a>
+          </div>
+
+          {/* Quick Contact & Social Links in front of website */}
+          <div className="pt-2 flex items-center gap-2 sm:gap-2.5 flex-wrap">
+            <a
+              href="https://www.linkedin.com/in/kajal-bharti-26a968213/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/80 hover:bg-[#0a66c2] hover:text-white text-[#14261e] border border-white shadow-sm text-xs font-semibold transition-all hover:scale-105 group"
+            >
+              <Linkedin className="w-4 h-4 text-[#0a66c2] group-hover:text-white transition-colors" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="https://github.com/bharti-kajal"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/80 hover:bg-[#24292f] hover:text-white text-[#14261e] border border-white shadow-sm text-xs font-semibold transition-all hover:scale-105 group"
+            >
+              <Github className="w-4 h-4 text-[#24292f] group-hover:text-white transition-colors" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="mailto:kajal.cloudops@gmail.com"
+              aria-label="Send Email"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/80 hover:bg-[#0f5a43] hover:text-white text-[#14261e] border border-white shadow-sm text-xs font-semibold transition-all hover:scale-105 group"
+            >
+              <Mail className="w-4 h-4 text-[#0f5a43] group-hover:text-white transition-colors" />
+              <span>kajal.cloudops@gmail.com</span>
             </a>
           </div>
         </div>

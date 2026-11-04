@@ -11,7 +11,7 @@ const experiences = [
   { title: 'Software Developer', company: 'FinHeal Finserve Pvt Ltd', period: 'Nov 2020 – Jun 2021 (7 Months)' },
 ];
 
-const featuredIds = ['swiftdial', 'upniva', 'complianceseva', 'unirr'];
+const featuredIds = ['swiftdial', 'upniva', 'complianceseva', 'interactify', 'kallo'];
 
 function LaptopThumb({ accent = '#c9962b' }) {
   return (

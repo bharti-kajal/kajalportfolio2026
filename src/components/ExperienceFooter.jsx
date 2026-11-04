@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Download, Mail, ArrowRight, Layers } from 'lucide-react';
+import { Send, Download, Mail, ArrowRight, Layers, Linkedin, Github } from 'lucide-react';
 
 export default function ExperienceFooter({ onContactClick, onDownloadResume, onCaseStudyClick }) {
   return (
@@ -29,21 +29,29 @@ export default function ExperienceFooter({ onContactClick, onDownloadResume, onC
           <p className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-[#0f5a43] uppercase">Open for Full-time &amp; Freelance</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#14261e] mt-1">Have a backend project in mind?</h2>
           <p className="text-sm text-[#4d6257] mt-1">Let&apos;s talk about building something secure, scalable and reliable.</p>
+          <div className="flex items-center gap-2.5 mt-3 flex-wrap text-xs font-semibold text-[#14261e]">
+            <a href="mailto:kajal.cloudops@gmail.com" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/80 hover:bg-[#0f5a43] hover:text-white border border-[#e6dac0] transition-colors">
+              <Mail className="w-3.5 h-3.5 text-[#0f5a43]" /> kajal.cloudops@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/kajal-bharti-26a968213/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/80 hover:bg-[#0a66c2] hover:text-white border border-[#e6dac0] transition-colors">
+              <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn
+            </a>
+            <a href="https://github.com/bharti-kajal" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/80 hover:bg-[#24292f] hover:text-white border border-[#e6dac0] transition-colors">
+              <Github className="w-3.5 h-3.5 text-[#24292f]" /> GitHub
+            </a>
+          </div>
         </div>
-        <div className="flex items-center gap-3 flex-wrap lg:flex-shrink-0 lg:max-w-[520px] lg:pl-8 lg:border-l lg:border-[#e6dac0]">
-          <button onClick={onContactClick} className="btn-blue text-white flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold">
+        <div className="flex items-center gap-3 flex-wrap lg:flex-shrink-0 lg:max-w-[420px] lg:pl-8 lg:border-l lg:border-[#e6dac0]">
+          <button onClick={onContactClick} className="btn-blue text-white flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 transition-transform">
             <Send className="w-4 h-4" /> Contact Me
           </button>
-          <a href="/Kajal_Bharti_Backend_Engineer.pdf" download="Kajal_Bharti_Backend_Engineer.pdf" onClick={onDownloadResume} className="glass-btn-secondary flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold">
+          <a href="/Kajal_Bharti_Backend_Engineer.pdf" download="Kajal_Bharti_Backend_Engineer.pdf" onClick={onDownloadResume} className="glass-btn-secondary flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 transition-transform">
             <Download className="w-4 h-4" /> Download Resume
-          </a>
-          <a href="mailto:kajal.cloudops@gmail.com" className="flex items-center gap-2 text-sm text-[#14261e] hover:text-[#0f5a43] transition-colors">
-            <Mail className="w-4 h-4" /> kajal.cloudops@gmail.com
           </a>
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-[#4d6257] font-medium">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-[#4d6257] font-medium pt-1">
         <span>© 2026 Kajal Bharti</span>
         <a href="mailto:kajal.cloudops@gmail.com" className="hover:text-[#0f5a43]">kajal.cloudops@gmail.com</a>
       </div>
